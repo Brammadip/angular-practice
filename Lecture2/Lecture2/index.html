@@ -1,0 +1,15 @@
+<html>
+	<body ng-app="shoppingApp">
+		<div ng-controller="cartCtrl">
+		<ul>
+			<label>Name:<input ng-model="name"></label>
+			<label>Price:<input ng-model="price"></label>
+			<button ng-click="addProduct()">Add</button>
+		<hr>
+		<li ng-repeat="product in products">{{product.name}} {{product.price}} <button ng-click="deleteProduct($index)">Delete</button></li>
+		</ul>
+		</div>
+	</body>
+	<script src="angular.js"></script>
+	<script src="app.js"></script>
+</html>
