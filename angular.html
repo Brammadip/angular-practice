@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="CSS/angular.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script type="text/javascript" src="JS/angular.js"></script>
+</head>
+<body>
+<!-- <div ng-controller="simpleController">
+First Name :<input type="text" ng-model="fname"> 
+Last Name :<input type="text" ng-model="lname"> 
+<p>{{fname}}</p>
+<p>{{lname}}</p>
+</div>
+
+<div ng-controller="mathController">
+<input type="text" ng-model="value">
+<h3 ng-show="value">{{square(value)}}</h3>
+
+</div> -->
+<br><br> 
+<div ng-controller="ctrl1">
+
+<div class="{{makeStyle}}"; style="height:100px;width:100px;background-color:{{x}}; border-radius:{{y}};" ng-hide="makeHide";>
+
+</div>
+<button ng-click="circle()">Click to Circle</button>
+<button ng-click="greening()">Click to Green</button>
+<button ng-click="hiding()">Click to hide</button>
+<button ng-click="toggling()">Click to toggle</button>
+<button ng-click="styling">Click to triangle</button>
+
+</div>
+<br><br> 
+ 
+1.	How will you display different images based on the status being red, amber, or green?
+ 
+<div ng-controller="productsController">
+<div>
+<img style="height:100px; width:100px;" src="Images/{{x}}">
+</div>				
+<button ng-click="red()">Red</button>
+<button ng-click="amber()">Amber</button>
+<button ng-click="green()">Green</button>
+</div>
+
+<br><br> 
+
+
+2.	How will you toggle image and enable/disable buttons conditionally?
+
+
+
+
+
+<br><br>
+3.	How will you loop through a collection and list each item? And shuffle / randomly display it.
+ 
+
+<div ng-controller="colorDisplay">
+
+	<br>
+		<div style="height:50px;width:50px;background-color:{{b}};border-radius:100px;" ng-repeat="b in colors"></div>
+
+	<br>
+	<button ng-click="shuffleColor()">Click to change color</button>
+
+</div>
+
+<br><br>
+8.	Make a simple Carousel using Angular only. (Try Carousel from Angular UI for reference only).
+ 
+<div ng-controller="imagesShow">
+
+	<div style="height:100px;width:100px;border:1px solid;">
+		<img style="height:100px;width:100px;border:1px solid;" src="Images/{{pic[ind]}}">
+
+	</div>
+<button ng-click="doPrevious()">Previous</button>
+<button ng-click="doNext()">Next</button>
+
+</div>
+<br><br>
+
+ Special ::<br><br>
+ 
+<div ng-controller="foodCtrl">
+
+	<div style="height:400px;width:400px;border:1px solid; background-color:skyblue;border-radius:15px;" ng-hide="mainContainer"><br><br>
+		<button ng-click="cakeShow()" style="height:30px;width:200px;border-radius:20px; margin:50px 30px 65px 80px;"> Cakes </button><br><br><br>
+			
+		<button ng-click="fruitShow()" style="height:30px;width:200px;border-radius:20px; margin:0px 30px 65px 80px;"> Fruits </button>
+
+	</div>
+	<div style="height:400px;width:400px;border:1px solid; background-color:pink;border-radius:15px;" ng-hide="cakeContainer">
+		<div><br><br>
+			<button ng-click="chacholateShow()" style="height:30px;width:200px;border-radius:20px;margin:10px 30px 65px 80px;"> Chacholate Cake</button> <br><br>
+			<button ng-click="strawberryShow()" style="height:30px;width:200px;border-radius:20px; margin:0px 30px 65px 80px;"> Strawberry Cake</button> <br><br><br><br>
+			<button ng-click="mainCntrShow()" style="height:30px;width:200px;border-radius:20px;margin:0px 0px 65px 80px;float:right;"> Return </button>
+		</div>
+
+	</div>
+
+	<div style="height:400px;width:400px;border:1px solid; background-color:purple;border-radius:15px;" ng-hide="fruitContainer">
+		<div><br><br>
+			<button ng-click="appleShow()" style="height:30px;width:200px;border-radius:20px; margin:10px 30px 65px 80px;"> Apple</button><br><br>
+			<button ng-click="orangeShow()" style="height:30px;width:200px;border-radius:20px; margin:0px 30px 65px 80px;"> Orange</button><br><br><br>
+			<button ng-click="mainCntrShow()" style="height:30px;width:200px;border-radius:20px; margin:0px 0px 65px 80px;float:right;"> Return </button>
+		</div>
+
+	</div >
+		
+
+	<div style="height:400px;width:400px;border:1px solid; background-color:red;border-radius:15px;" ng-hide="chacholate">
+		<img style="height:350px;width:398px;border:1px solid;border-radius:15px;" src="Images/Chacholate cake.jpg"> <br>
+		<button ng-click="cakeCntrShow()" style="height:30px;width:200px;border-radius:20px;"> Return </button>
+	</div>
+
+	<div style="height:400px;width:400px;border:1px solid; background-color:red;border-radius:15px;" ng-hide="strawberry">
+		<img style="height:350px;width:398px;border:1px solid;border-radius:15px;" src="Images/Strawberry cake.jpg"> <br>
+		<button ng-click="cakeCntrShow()" style="height:30px;width:200px;border-radius:20px;"> Return </button>
+	</div>
+
+	<div style="height:400px;width:400px;border:1px solid; background-color:green;border-radius:15px;" ng-hide="apple">
+		<img style="height:350px;width:398px;border:1px solid;border-radius:15px;" src="Images/Apple.jpg"> <br>
+		<button ng-click="fruitCntrShow()" style="height:30px;width:200px;border-radius:20px;"> Return </button>
+	</div>
+	<div style="height:400px;width:400px;border:1px solid; background-color:green;border-radius:15px;" ng-hide="orange">
+		<img style="height:350px;width:398px;border:1px solid;border-radius:15px;" src="Images/Orange.jpg"> <br>
+		<button ng-click="fruitCntrShow()" style="height:30px;width:200px;border-radius:20px;"> Return </button>
+	</div>
+
+</div>
+
+<br><br>
+ 
+Table Data :::
+
+ 
+<div ng-controller="simpleController">
+	<br>
+	Search : <input type="text" ng-model="search"><br><br>
+	
+	<table class="frmt">
+		<tr>
+			<th class="frmto">No</th>
+			<th class="frmto">Name</th>
+			<th class="frmto">Age</th>
+			<th class="frmto">City</th>
+		</tr>
+		<tr ng-repeat="entry in collection | filter:search"><td class="frmto">{{$index+1}}</td>
+			<td class="frmto">{{entry.name}}</td>
+			<td class="frmto">{{entry.age}}</td>
+			<td class="frmto">{{entry.city}}</td>
+		</tr>
+
+	</table> <br>
+
+	<form ng-submit="addEntry()">
+		Name :<input type="text" ng-model="newData.name" required>
+		Age :<input type="number" ng-model="newData.age" required>
+		City :<input type="text" ng-model="newData.city" required>
+		<input type="submit" value="Add">
+
+	</form>
+
+
+</div>
+
+ <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+</body>
+</html>

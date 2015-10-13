@@ -1,0 +1,28 @@
+<html>
+<style type="text/css">
+.circle{
+	height:100px;
+	width:100px;
+	border-radius:100px;
+	border:1px solid black;
+}
+</style>
+	<body ng-app="shoppingApp">
+		<div ng-controller="productController">
+
+		<hr>
+			<label>Name Of Product<input type="text" ng-model="prodName"></label>
+			<label>Price Of Product<input type="number" ng-model="prodPrice"></label>
+			<button ng-click="addProduct()">Add to List</button>
+			<hr>
+			<label>Search:<input type="text" ng-model="filterQuery"></label>
+			<ul>
+				<li ng-repeat="product in products | orderBy:orderType | limitTo:limitNumber |filter:filterQuery">{{product.name | reverse}} {{product.price | currency}} <button ng-click="deleteProduct($index)">X</button></li>
+			</ul>
+			<select ng-model="limitNumber"><option ng-repeat="x in [1,2,3,4]">{{x}}</option></select>
+			<select ng-model="orderType"><option ng-repeat="y in ['name','-name','price','-price']">{{y}}</option></select>
+		</div>
+	</body>
+	<script src="angular.js"></script>
+	<script src="app.js"></script>
+</html>
